@@ -4,25 +4,17 @@ import java.util.List;
 
 public class ComparaValor {
 	
-	int menor, maxmenor;
+	int max=0;
 	
 	public int CualMenor (List<Integer> numeros) {
 		
 		for(int k=0; k<numeros.size(); k++) {
-			for(int l=1; l<k;l++) {
-				if(numeros.get(k)<numeros.get(l)) {
-					menor=numeros.get(k);
-				} else if(numeros.get(l)<numeros.get(k)) {
-					menor=numeros.get(l);
-				}
-				
-				if (menor < maxmenor) {
-					maxmenor=menor;
-				}
+			if(numeros.get(k)>max) {
+				max=numeros.get(k);
 			}
 		}
 		
-		return maxmenor;
+		return max;
 	}
 
 }
